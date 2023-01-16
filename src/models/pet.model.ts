@@ -1,7 +1,7 @@
 import { AnimalType } from "./animal-type.model";
 import { Owner } from "./owner.model";
 
-export interface PetDTO{
+export interface Pet{
   id: string,
   firstName: string,
   lastName: string,

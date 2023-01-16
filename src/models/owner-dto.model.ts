@@ -1,3 +1,5 @@
 export interface OwnerDTO {
-  name: string
+  firstName: string,
+  lastName: string,
+  dateOfBirth: string
 }
