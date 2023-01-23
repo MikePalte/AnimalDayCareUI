@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Pet } from 'src/models/pet.model';
+import { DataService } from '../services/data.service';
 
 
 const PET_DATA: Pet[] =[{
@@ -32,10 +34,15 @@ export class PetComponent implements OnInit {
   displayedColumns: string[] = ['firstName', 'lastName', 'dateOfBirth'];
   dataSource: MatTableDataSource<Pet> = new MatTableDataSource<Pet>();
 
-  constructor() { }
+  constructor(private dataService: DataService, private activatedRoute: ActivatedRoute, private route: Router) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<Pet>(PET_DATA);
+
+    this.activatedRoute.data.subscribe({
+      next: (resp) => this.dataSource = new MatTableDataSource<Pet>(resp['data'] as Pet[]),
+      error: (e) => console.log(e),
+      complete: () => console.log('complete')
+    })
   }
 
 }
