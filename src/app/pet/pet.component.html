@@ -26,6 +26,23 @@
         <td mat-cell *matCellDef="let element"> {{element.dateOfBirth | date:'MM-dd-yyyy'}} </td>
       </ng-container>
 
+      <!-- Owner First Name Column -->
+      <ng-container matColumnDef="ownerFirstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Owner First Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.owner.firstName}} </td>
+      </ng-container>
+
+      <!-- Owner Last Name Column -->
+      <ng-container matColumnDef="ownerLastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Owner Last Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.owner.lastName}} </td>
+      </ng-container>
+
+      <!-- Animal Type Column -->
+      <ng-container matColumnDef="animalType">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Animal Type </th>
+        <td mat-cell *matCellDef="let element"> {{element.animalType.name}} </td>
+      </ng-container>
 
       <!-- Edit Column -->
       <!-- <ng-container matColumnDef="edit">

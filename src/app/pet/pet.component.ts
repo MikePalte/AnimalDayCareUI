@@ -31,7 +31,7 @@ const PET_DATA: Pet[] =[{
 })
 export class PetComponent implements OnInit {
 
-  displayedColumns: string[] = ['firstName', 'lastName', 'dateOfBirth'];
+  displayedColumns: string[] = ['firstName', 'lastName', 'dateOfBirth', 'ownerFirstName', 'ownerLastName', 'animalType'];
   dataSource: MatTableDataSource<Pet> = new MatTableDataSource<Pet>();
 
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute, private route: Router) { }

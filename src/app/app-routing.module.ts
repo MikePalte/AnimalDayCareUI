@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PetCrudComponent } from './pet/pet-crud/pet-crud.component';
 import { PetComponent } from './pet/pet.component';
 import { PetResolverService } from './services/resolvers/pet-resolver.service';
 
@@ -13,6 +14,10 @@ const routes: Routes = [{
   path: "pets",
   component: PetComponent,
   resolve: {data: PetResolverService}
+},
+{
+  path: "pet/:id",
+  component: PetCrudComponent
 }];
 
 @NgModule({
