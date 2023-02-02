@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PetComponent } from './pet.component';
-import { MaterialModule } from 'src/misc/material.module';
+import { PetComponent } from './pet.component'; 
 import { PetCrudComponent } from './pet-crud/pet-crud.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/misc/shared.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule,
-    FormsModule,
-    ReactiveFormsModule
+    SharedModule
   ],
   declarations: [PetComponent, PetCrudComponent]
 })
